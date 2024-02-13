@@ -1,26 +1,36 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Navbar />
+  <div class="container">
+    <vue3-progress />
+    <router-view />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Navbar from './components/Navbar.vue'
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
+    Navbar
+  },
+  name:'App',
+  mounted() {
+    this.$progress.finish();
+  },
+  created() {
+    this.$progress.start();
+    this.$router.beforeEach((to, from, next) => {
+      this.$progress.start();
+      next();
+    });
+
+    this.$router.afterEach((to, from) => {
+      this.$progress.finish();
+    });
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>

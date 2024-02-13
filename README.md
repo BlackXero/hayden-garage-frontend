@@ -1,24 +1,10 @@
-# hayden
+# Hayden Booking System - Frontend
 
-## Project setup
-```
-npm install
-```
+This is a test project to help you create booking for the customer.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Steps to setup it on local machine
+- Clone the repo `git clone https://github.com/BlackXero/hayden-garage-frontend.git`
+- `cd hayden-garage-frontend`
+- `npm install`
+- Once the node dependencies are done, Please update `.env` file variables
+- `npm run serve` to run the project
